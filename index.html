@@ -6,11 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SERVICIO</title>
     
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Anton&family=Roboto+Mono&family=Supermercado+One&display=swap" rel="stylesheet">
+
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Supermercado+One&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <style>
+
 body{
-     background: #FFF;
+     background: #22A155;
      
+  }
+
+  h2{
+
+   font-family: 'Alfa Slab One', cursive;
+  }
+  label{
+
+    font-family: 'Supermercado One', cursive;
   }
 </style>
   
@@ -35,25 +57,42 @@ body{
 
 
 
-<form action="#">
+<form action="#" id="form1">
 <div class="md-4 text-center">
+    <i class="fas fa-user"></i>
 <label for="email" class="form-label">Correo electronico</label>
-<input type="email" class="form-control" name="email">
+
+<input id="imail" type="email" class="form-control" name="email">
 </div>
     
+
+	
+
+
 <div class="mb-4 text-center">
+    <i class="fas fa-key"></i>
 <label for="password" class="form-label">Password</label>
-<input type="password" class="form-control" name="password">
+<input id="password" type="password" class="form-control" name="password">
 </div>
 
-<div class="mb-4 form-check text-dark text-center">
-<input type="checkbox" name="connected" class="form-check-input" id="">
-<label for="connected" class="form-check-label">Mantenerme Conectado</label>
+
+
+<div class=" mb-4 form-check text-dark text-center text-dark custom-control custom-checkbox">
+	<input type="checkbox" name="connected" class="custom-control-input" id="">
+	<label for="connected" class="form-check-label">Mantenerme Conectado</label>
 </div>
+
+
 
 <div class="d-grid">
-<button type="submit" class="btn btn-success">Iniciar Sesion</button>
+<button type="submit" class="btn btn-dark">Iniciar Sesion</button>
 </div>
+
+<div id="alertSI" class="alert alert-success alert-dismissible fade show" role="alert">login !ok:</div>
+<div id="alertSI" class="alert alert-danger" role="alert">completa los datos</div>
+
+
+
 
 <div class="my-3 text-center">
 <spam>No tienes cuenta? <a href="registro.html">Registrate</a></spam><br>
@@ -68,12 +107,40 @@ body{
 </div>
 
 
+<script>
+$(document).ready(function(){
+    $("#alertSI").hide();
+    $("#alertNO").hide();
+    $("#form1").submit(function(e) {
+        e.preventDefault();
+        imail = $.trim($("imail").val());
+        password = $.trim($("password").val());
+
+    if(imail.length>0 && password.length>0){
+      $("#alertSI").fadeTo(2000, 500).slideUp(500, function () {
+          $("#alertSI").fadeTo(2000, 500).slideUp(500);
+          
+      });
+    }else{
+        $("#alertNO").fadeTo(2000, 500).slideUp(500, function() {
+
+            
+        });
+
+    }
+        
+    });
+
+}
 
 
+
+
+</script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="bootstrap.bundle.min.js"></script>
+   
 
 
 
