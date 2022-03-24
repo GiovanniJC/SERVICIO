@@ -1,15 +1,22 @@
+
+
 <?php
-function conectar(){
-    $host="localhost";
-    $user="root";
-    $pass="";
+ function conexion(){
+ $host="localhost";
+ $user="root";
+ $pass="";
+ $bd="serviciobdgio";
 
-    $bd="serviciobd";
+ 
 
-    $con=mysqli_connect($host,$user,$pass);
+$conexion=mysqli_connect($host,$user,$pass);
 
-    mysqli_select_db($con,$bd);
+ mysqli_select_db($conexion,$bd);
 
-    return $con;
-}
+return $conexion;
+
+ }
+
+
+ 
 ?>
